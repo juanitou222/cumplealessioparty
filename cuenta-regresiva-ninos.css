@@ -1,0 +1,318 @@
+/* styles.css - Versión animada para niños */
+/* RESET AND BASE STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Comic Sans MS', 'Montserrat', cursive, sans-serif;
+  color: white;
+  overflow: hidden;
+}
+
+/* BACKGROUND VIDEO */
+#video-fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(0.7);
+}
+
+/* MAIN CONTENT - Estilo más infantil */
+.contenido {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  backdrop-filter: blur(3px);
+}
+
+/* TYPOGRAPHY - Fuentes más divertidas */
+h1 {
+  font-family: 'Comic Sans MS', 'Playfair Display', cursive, serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 15px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+  animation: bounceIn 1.5s ease, rainbow 8s linear infinite;
+  color: #FFD700; /* Amarillo dorado */
+}
+
+p {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  margin-bottom: 25px;
+  max-width: 700px;
+  line-height: 1.6;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  padding: 0 20px;
+  animation: fadeIn 2s ease;
+}
+
+strong {
+  color: #FF6B6B; /* Rojo claro */
+  font-weight: bold;
+  animation: colorChange 3s infinite alternate;
+}
+
+/* COUNTDOWN STYLES - Más colorido */
+#countdown {
+  display: flex;
+  gap: 15px;
+  margin: 30px 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.countdown-box {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  padding: 15px 10px;
+  min-width: 90px;
+  backdrop-filter: blur(5px);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease;
+  animation: float 3s ease-in-out infinite;
+}
+
+.countdown-box:nth-child(1) { animation-delay: 0s; background-color: rgba(255, 107, 107, 0.6); }
+.countdown-box:nth-child(2) { animation-delay: 0.2s; background-color: rgba(255, 206, 86, 0.6); }
+.countdown-box:nth-child(3) { animation-delay: 0.4s; background-color: rgba(75, 192, 192, 0.6); }
+.countdown-box:nth-child(4) { animation-delay: 0.6s; background-color: rgba(54, 162, 235, 0.6); }
+
+.countdown-box:hover {
+  transform: scale(1.1) rotate(5deg);
+  z-index: 10;
+}
+
+.countdown-box .number {
+  font-size: 2.5em;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.countdown-box .label {
+  font-size: 0.9em;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: white;
+  font-weight: bold;
+}
+
+.event-started {
+  font-size: 1.8em;
+  color: #FFD700;
+  padding: 20px 40px;
+  background: rgba(255, 107, 107, 0.7);
+  border-radius: 50px;
+  animation: pulse 1s infinite, rainbowBg 5s infinite;
+  border: 3px dashed white;
+}
+
+/* BUTTONS - Botones más divertidos */
+.botones {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.botones a {
+  text-decoration: none;
+}
+
+.botones button {
+  background-color: rgba(255, 107, 107, 0.7);
+  color: white;
+  border: 3px solid white;
+  padding: 15px 35px;
+  font-size: 1.3em;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s;
+  backdrop-filter: blur(5px);
+  font-weight: bold;
+  min-width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: wiggle 2s infinite;
+}
+
+.botones button:nth-child(1) {
+  background-color: rgba(75, 192, 192, 0.7);
+}
+
+.botones button:nth-child(2) {
+  background-color: rgba(255, 206, 86, 0.7);
+}
+
+.botones button:hover {
+  background-color: white;
+  color: #222;
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  animation: none;
+}
+
+/* MUSIC CONTROL - Más visible */
+.music-control {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 107, 107, 0.8);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 3px solid white;
+  color: white;
+  font-size: 1.5em;
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.music-control:hover {
+  transform: scale(1.1) rotate(15deg);
+  background: rgba(255, 206, 86, 0.8);
+}
+
+/* ANIMATIONS - Más animaciones divertidas */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.1); opacity: 0; }
+  60% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes wiggle {
+  0%, 7% { transform: rotate(0deg); }
+  2% { transform: rotate(-3deg); }
+  4% { transform: rotate(3deg); }
+  6% { transform: rotate(0deg); }
+}
+
+@keyframes rainbow {
+  0% { color: #FF0000; }
+  14% { color: #FF7F00; }
+  28% { color: #FFFF00; }
+  42% { color: #00FF00; }
+  57% { color: #0000FF; }
+  71% { color: #4B0082; }
+  85% { color: #9400D3; }
+  100% { color: #FF0000; }
+}
+
+@keyframes rainbowBg {
+  0% { background-color: #FF0000; }
+  14% { background-color: #FF7F00; }
+  28% { background-color: #FFFF00; }
+  42% { background-color: #00FF00; }
+  57% { background-color: #0000FF; }
+  71% { background-color: #4B0082; }
+  85% { background-color: #9400D3; }
+  100% { background-color: #FF0000; }
+}
+
+@keyframes colorChange {
+  0% { color: #FF6B6B; }
+  25% { color: #FFD166; }
+  50% { color: #06D6A0; }
+  75% { color: #118AB2; }
+  100% { color: #073B4C; }
+}
+
+/* ELEMENTOS DECORATIVOS EXTRA */
+.contenido::before {
+  content: "✨";
+  position: absolute;
+  font-size: 2rem;
+  top: 10%;
+  left: 10%;
+  animation: float 4s ease-in-out infinite, spin 8s linear infinite;
+}
+
+.contenido::after {
+  content: "🎉";
+  position: absolute;
+  font-size: 3rem;
+  bottom: 15%;
+  right: 10%;
+  animation: float 5s ease-in-out infinite reverse, spin 10s linear infinite reverse;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* RESPONSIVE ADJUSTMENTS */
+@media (max-width: 768px) {
+  .contenido {
+    padding: 20px 10px;
+  }
+  
+  .countdown-box {
+    min-width: 70px;
+    padding: 10px 5px;
+  }
+  
+  .countdown-box .number {
+    font-size: 2em;
+  }
+  
+  .botones button {
+    padding: 12px 25px;
+    min-width: 200px;
+    font-size: 1.1em;
+  }
+  
+  .event-started {
+    font-size: 1.4em;
+    padding: 15px 30px;
+  }
+  
+  .contenido::before, .contenido::after {
+    font-size: 1.5rem;
+  }
+}
